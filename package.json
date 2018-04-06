@@ -1,0 +1,23 @@
+{
+  "name": "test-ci2",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "release": "git checkout develop && git push",
+    "preversion": "git checkout develop && git pull && npm test",
+    "version": "git checkout -b release/$npm_package_version && git push --set-upstream origin release/$npm_package_version",
+    "postversion": "git checkout master && git merge --no-ff release/$npm_package_version && git checkout develop && git merge --no-ff release/$npm_package_version && git push --all && git push --tags     "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angusyg/test-ci2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angusyg/test-ci2/issues"
+  },
+  "homepage": "https://github.com/angusyg/test-ci2#readme"
+}
