@@ -1,6 +1,6 @@
 {
   "name": "test-ci2",
-  "version": "1.16.0",
+  "version": "1.25.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "release": "git checkout develop && git push",
     "preversion": "git checkout develop && git pull && npm test",
     "version": "git checkout -b release/$npm_package_version && git push --set-upstream origin release/$npm_package_version",
-    "postversion": "git checkout master && git merge --no-ff release/$npm_package_version && git checkout develop && git merge --no-ff release/$npm_package_version && git push --all && git push --tags           ",
+    "postversion": "git checkout master && git merge --no-ff release/$npm_package_version && git checkout develop && git merge --no-ff release/$npm_package_version && git push --all && git push --tags            ",
     "toto": ""
   },
   "repository": {
